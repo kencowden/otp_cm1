@@ -1,4 +1,4 @@
 - Bruce Tate
 - Michael Conrad
 - Ary Rosas
-- 
+- Ricardo Viera

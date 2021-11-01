@@ -16,9 +16,29 @@ defmodule CountOnMe.Service do
       {:state, from} ->
         send(from, MapCore.message(counter))
         counter
+
       :inc ->
         MapCore.inc(counter)
-    end
 
+      :dec ->
+        MapCore.dec(counter)
+    end
+  end
+
+  def increment(pid) do
+    send(pid, :inc)
+  end
+
+  def decrement(pid) do
+    send(pid, :dec)
+  end
+
+  def state(pid) do
+    send(pid, {:state, self()})
+
+    receive do
+      message ->
+        message
+    end
   end
 end
