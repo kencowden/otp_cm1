@@ -1,7 +1,7 @@
 defmodule CountOnMeTest do
   use ExUnit.Case
-  alias CountOnMe.IntegerCore
 
+  alias CountOnMe.IntegerCore
   doctest CountOnMe
 
   test "greets the world" do
