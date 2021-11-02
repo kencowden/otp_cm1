@@ -7,7 +7,11 @@ defmodule Enigma.Board do
     1..8 |> Enum.shuffle() |> Enum.take(4)
   end
 
-  def new(answer \\ generate()) do
+  def new(:generate) do
+    new(generate())
+  end
+
+  def new(answer) do
     %__MODULE__{solution: answer, guesses: []}
   end
 
@@ -15,7 +19,7 @@ defmodule Enigma.Board do
     %{board | guesses: [guess | board.guesses]}
   end
 
-  def row(solution, guess) do
+  defp row(solution, guess) do
     "|#{inspect(guess)} | #{Score.new(solution, guess) |> Score.as_string()} |"
   end
 
