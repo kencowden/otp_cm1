@@ -18,4 +18,8 @@ defmodule Enigma.Server do
   def move(pid, guess) do
     GenServer.call(pid, {:move, guess})|> IO.puts()
   end
+
+  def start_link(name) do
+    GenServer.start_link(__MODULE__, :generate, name: name)
+  end
 end
