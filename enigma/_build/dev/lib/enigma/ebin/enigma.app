@@ -2,7 +2,8 @@
              [{applications,[kernel,stdlib,elixir,logger]},
               {description,"enigma"},
               {modules,['Elixir.Enigma','Elixir.Enigma.Application',
-                        'Elixir.Enigma.Board','Elixir.Enigma.Score']},
+                        'Elixir.Enigma.Board','Elixir.Enigma.Score',
+                        'Elixir.Enigma.Server']},
               {registered,[]},
               {vsn,"0.1.0"},
               {mod,{'Elixir.Enigma.Application',[]}}]}.
