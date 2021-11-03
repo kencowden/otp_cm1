@@ -21,4 +21,9 @@ defmodule CountOnMe.Server do
   def handle_cast(:dec, counter) do
     {:noreply, MapCore.dec(counter)}
   end
+
+  # Client functions
+  def start_link(input) do
+    GenServer.start_link(__MODULE__, input)
+  end
 end

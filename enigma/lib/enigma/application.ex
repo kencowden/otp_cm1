@@ -7,9 +7,9 @@ defmodule Enigma.Application do
 
   @impl true
   def start(_type, _args) do
+    IO.puts("application starting...")
     children = [
-      # Starts a worker by calling: Enigma.Worker.start_link(arg)
-      # {Enigma.Worker, arg}
+      {Enigma.Server, :ken}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
