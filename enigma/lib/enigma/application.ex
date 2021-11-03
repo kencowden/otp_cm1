@@ -8,8 +8,10 @@ defmodule Enigma.Application do
   @impl true
   def start(_type, _args) do
     IO.puts("application starting...")
+
     children = [
-      {Enigma.Server, :ken}
+      Supervisor.child_spec({Enigma.Server, :superman}, id: 1),
+      Supervisor.child_spec({Enigma.Server, :slickrick}, id: 2)
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
