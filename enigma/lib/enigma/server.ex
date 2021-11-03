@@ -20,6 +20,7 @@ defmodule Enigma.Server do
   end
 
   def start_link(name) do
+    IO.puts("#{name} has started ...")
     GenServer.start_link(__MODULE__, :generate, name: name)
   end
 end
